@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: local
+      args:
+        - UID=${UID}
+    image: docker-boilerplate
+    command: npm run start
+    volumes:
+      - ./:/home/node/app
+
