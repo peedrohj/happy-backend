@@ -8,8 +8,8 @@ services:
       target: local
       args:
         - UID=${UID}
-    image: docker-boilerplate
-    command: npm run start
+    image: happy-backend
+    command: sh .docker/scripts/run.sh
     volumes:
       - ./:/home/node/app
 
