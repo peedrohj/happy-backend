@@ -1,4 +1,4 @@
-FROM node:14.17.0-slim as base
+FROM node:lts-slim as base
 
 # Install GCC, Make, libpq-dev (for psicopg) and procps
 RUN apt-get update
@@ -28,7 +28,7 @@ RUN npm i -g @nestjs/cli
 # Configure node user
 RUN usermod -u ${UID} node 
 USER node
-WORKDIR /home/node/app
+WORKDIR /home/node/app/code
 
 CMD [ "tail", "-f" , "/dev/null" ]
 

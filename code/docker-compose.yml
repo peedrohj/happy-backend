@@ -11,5 +11,6 @@ services:
     image: happy-backend
     command: sh .docker/scripts/run.sh
     volumes:
-      - ./:/home/node/app
-
+      - ../:/home/node/app
+    ports:
+      - 3000:3000
